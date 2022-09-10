@@ -1,0 +1,120 @@
+.navigation{
+
+  &__container{
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 37px 37px 22px 37px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  & .nav{
+
+    max-width: 673.68px;
+    width: 100%;
+
+    &__list{
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__item{
+
+      padding: 13px 26px;
+
+      & a{
+        text-decoration: none;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 19px;
+        text-align: center;
+        letter-spacing: 0.015em;
+        color: #2C2C2C;
+      }
+    }
+
+    &__item_active{
+
+      background-color: #282828;
+      border-radius: 30px;
+
+      & a{
+        color: #FFFFFF;
+      }
+    }
+  }
+
+  & .sort{
+
+    box-sizing: border-box;
+    padding-top: 13px;
+    display: flex;
+    align-items: center;
+
+    &__icon{
+      cursor: pointer;
+      padding-top: 3.5px;
+    }
+
+    &__text{
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 17px;
+      letter-spacing: 0.015em;
+      color: #2C2C2C;
+      padding-left: 7px;
+    }
+
+    &__type{
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 17px;
+      letter-spacing: 0.015em;
+      color: #1EFE6A;
+      border-bottom: 1px dashed #1EFE6A;
+      padding-left: 4px;
+      cursor: pointer;
+    }
+
+    &__list{
+      background: #FFFFFF;
+      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.09);
+      border-radius: 10px;
+      box-sizing: border-box;
+      padding: 13px 0;
+      max-width: 132px;
+      margin-top: 8px;
+      display: none;
+    }
+
+    &__item{
+
+      padding: 10px 14px;
+
+      & span{
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 17px;
+        letter-spacing: 0.015em;
+        color: #2C2C2C;
+      }
+    }
+
+    &__item_active{
+      & span{
+        color: #1EFE6A;
+      }
+    }
+  }
+
+}

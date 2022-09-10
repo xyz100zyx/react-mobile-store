@@ -1,0 +1,69 @@
+.phone {
+  max-width: 242.87px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  &:hover{
+
+    .phone__like{
+        transition: all 0.5s ease;
+        opacity: 1;
+    }
+  }
+
+  &__img {
+    max-width: 210px;
+    height: 285px;
+    object-fit: cover;
+  }
+
+  &__like {
+    transition: all 0.5s ease;
+    position: absolute;
+    right: -20px;
+    top: 10px;
+    opacity: 0;
+  }
+
+  &__type {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0.015em;
+    color: #7a7777;
+    margin-top: 13px;
+  }
+
+  &__name {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    letter-spacing: 0.015em;
+    margin-top: 13px;
+
+    & a{
+        text-decoration: none;
+        color: #454545;
+    }
+  }
+
+  &__price {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 27px;
+    text-align: center;
+    letter-spacing: 0.015em;
+    margin-top: 9px;
+    color: #000000;
+  }
+}

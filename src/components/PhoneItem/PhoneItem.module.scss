@@ -1,0 +1,109 @@
+.PhoneItem {
+  &__title {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    letter-spacing: 0.015em;
+    margin-top: 19px;
+    color: #000000;
+    padding-bottom: 10px;
+  }
+
+  &__content {
+    display: flex;
+    margin-top: 25px;
+    padding: 0 15px 65px 15px;
+    border-bottom: 1px solid #C6C6C6;
+
+  }
+
+  & .content {
+    &__img {
+      width: 285px;
+      height: 435px;
+    }
+
+    &__right {
+      margin-left: 176px;
+      max-width: 229px;
+
+      & .list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 17px;
+
+        & li {
+          display: flex;
+          max-width: 105px;
+          width: 100%;
+          justify-content: space-between;
+          align-items: center;
+
+          & span {
+            font-family: "Inter";
+            font-style: normal;
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 17px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            letter-spacing: 0.015em;
+          }
+        }
+      }
+
+      & .price {
+        margin-top: 25px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-sizing: border-box;
+        padding: 18px 18px 27px 18px;
+        box-shadow: 8px 8px 25px rgba(0, 0, 0, 0.25);
+        border-radius: 20px;
+        width: 100%;
+        transition: box-shadow 1s ease;
+
+        &:hover{
+            transition: box-shadow 1s ease;
+           box-shadow: none; 
+        }
+
+        &__value {
+          font-style: normal;
+          font-weight: 500;
+          font-size: 24px;
+          line-height: 29px;
+          letter-spacing: 0.015em;
+          color: #1efe6a;
+          padding: 26px 20px;
+        }
+
+        &__button {
+          margin-top: 14px;
+          background: rgba(255, 0, 0, 0.68);
+          border-radius: 30px;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 18px;
+          line-height: 22px;
+          letter-spacing: 0.015em;
+          color: #ffffff;
+          border: none;
+          padding: 17.5px 22px;
+          cursor: pointer;
+          transition: transform 1s ease;
+
+          &:hover{
+            background-color: #54bd04;
+            transform: scale(1.15);
+            transition: all 1s ease;
+          }
+        }
+      }
+    }
+  }
+}

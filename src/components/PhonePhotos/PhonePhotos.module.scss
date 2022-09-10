@@ -1,0 +1,25 @@
+.PhonePhotos {
+  border-bottom: 1px solid #c6c6c6;
+
+  &__container {
+    display: flex;
+    justify-content: center;
+  }
+
+  & .list {
+    box-sizing: border-box;
+    padding: 20px 15px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+
+    & .item {
+      cursor: pointer;
+
+      & img {
+        height: 180px;
+        object-fit: contain;
+      }
+    }
+  }
+}
