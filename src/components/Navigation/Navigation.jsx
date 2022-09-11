@@ -1,32 +1,40 @@
 import React from "react";
+import {useDispatch, useSelector} from "react-redux"
+import {setActiveManufacturer} from "../../redux/slices/filterSlice";
 import styles from './Navigation.module.scss';
 
-import sortIcon from '../../assets/Navigation/sort-icon.svg'
+import sortIcon from '../../assets/Navigation/sort-icon.svg';
+
+export const types = [
+    {"0": "Все"},
+    {"1": "Poco"},
+    {"2": "iPhone"},
+    {"3": "Samsung"},
+    {"4": "Xiaomi"}
+]
 
 const Navigation = () => {
 
-    
+    const activeManufacturer = useSelector(state => state.filter.activeManufacturer);
+    const dispatch = useDispatch();
+
+
+    const onClickManufacturer = (index) => {
+        dispatch(setActiveManufacturer(index))
+    }
 
     return (
         <div className={styles.navigation}>
             <div className={styles.navigation__container}>
                 <nav className={`${styles.navigation__nav} ${styles.nav}`}>
                     <ul className={styles.nav__list}>
-                        <li className={`${styles.nav__item} ${styles.nav__item_active}`}>
-                            <a href="#">Все</a>
-                        </li>
-                        <li className={styles.nav__item}>
-                            <a href="#">Poco</a>
-                        </li>
-                        <li className={styles.nav__item}>
-                            <a href="#">iPhone</a>
-                        </li>
-                        <li className={styles.nav__item}>
-                            <a href="#">Samsung</a>
-                        </li>
-                        <li className={styles.nav__item}>
-                            <a href="#">Xiaomi</a>
-                        </li>
+                        {types.map((obj, index) => {
+                            return (
+                                <li key={index} onClick={() => onClickManufacturer(index)} className={activeManufacturer === index ? `${styles.nav__item} ${styles.nav__item_active}` : `${styles.nav__item}`}>
+                                    <a href="#">{obj[index]}</a>
+                                </li>
+                            )
+                        })}
                     </ul>
                 </nav>
                 <div className={`${styles.navigation__sort} ${styles.sort}`}>

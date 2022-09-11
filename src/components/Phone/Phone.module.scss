@@ -17,7 +17,7 @@
   &__img {
     max-width: 210px;
     height: 285px;
-    object-fit: cover;
+    object-fit: contain;
   }
 
   &__like {
@@ -26,6 +26,7 @@
     right: -20px;
     top: 10px;
     opacity: 0;
+    cursor: pointer;
   }
 
   &__type {

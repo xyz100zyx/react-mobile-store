@@ -9,8 +9,6 @@ import {useSelector} from "react-redux";
 
 const PhoneItem = ({item}) => {
 
-    console.log('is update')
-
     const phone = useSelector(state => state.phones.active);
 
     return (
