@@ -3,8 +3,7 @@ import axios from "axios";
 import styles from './Phones.module.scss';
 import Phone from "../Phone/Phone";
 import {useDispatch, useSelector} from "react-redux";
-import {setActivePhone, setPhones} from "../../redux/slices/phonesSlice";
-import {setActiveManufacturer} from "../../redux/slices/filterSlice";
+import {setPhones} from "../../redux/slices/phonesSlice";
 
 const Phones = () => {
 

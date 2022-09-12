@@ -4,8 +4,13 @@ import styles from "./Header.module.scss";
 import logo from '../../assets/Header/react-academy.svg'
 import cart from '../../assets/Header/cart-icon.svg'
 import {Link} from "react-router-dom";
+import {useSelector} from "react-redux";
 
 const Header = () => {
+
+    const totalPrice = useSelector(state => state.cart.totalPrice)
+    const cartCount = useSelector(state => state.cart.chosenPhones).length
+
     return (
         <div className={styles.header}>
             <div className={styles.header__container}>
@@ -20,9 +25,9 @@ const Header = () => {
                 </div>
                 <Link to={`/cart`}>
                     <div className={`${styles.header__bucket} ${styles.bucket}`}>
-                        <span className={styles.bucket__price}>510 BYN</span>
+                        <span className={styles.bucket__price}>{totalPrice} BYN</span>
                         <img src={cart} alt="cart-icon" className={styles.bucket__img}/>
-                        <span className={styles.bucket__count}>3</span>
+                        <span className={styles.bucket__count}>{cartCount}</span>
                     </div>
                 </Link>
             </div>
