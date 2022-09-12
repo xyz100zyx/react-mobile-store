@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './Cart.module.scss';
 import cartSvg from '../../assets/Cart/iconfinder_shopping-cart_2561279 1.svg'
-import phoneImg from '../../assets/PhonePage/PhoneItem/Note_11_Pro_Black_1.jpg'
 import {useDispatch, useSelector} from "react-redux";
 import {clearChosenPhones} from "../../redux/slices/cartSlice";
 

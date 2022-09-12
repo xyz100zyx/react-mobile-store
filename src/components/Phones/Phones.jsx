@@ -23,24 +23,6 @@ const Phones = () => {
         fetchPhones();
     },[])
 
-    /*const onPhoneClick = (item) => {
-        switch (item.manufacturer) {
-            case 'Poco':
-                dispatch(setActiveManufacturer(1))
-                break;
-            case 'Apple iPhone':
-                dispatch(setActiveManufacturer(2))
-                break;
-            case 'Samsung':
-                dispatch(setActiveManufacturer(3))
-                break;
-            case 'Xiaomi':
-                dispatch(setActiveManufacturer(4))
-                break;
-        }
-        dispatch(setActivePhone(item))
-    }*/
-
     const pocoPhones = phones.filter((phone) => phone.manufacturer === 'POCO');
     const iPhones = phones.filter((phone) => phone.manufacturer === 'Apple iPhone');
     const samsungPhones = phones.filter((phone) => phone.manufacturer === 'Samsung');
