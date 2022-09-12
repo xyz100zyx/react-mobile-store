@@ -1,12 +1,13 @@
 import React from "react";
 import {useDispatch, useSelector} from "react-redux"
+import {Link} from "react-router-dom";
 import {setActiveManufacturer} from "../../redux/slices/filterSlice";
 import styles from './Navigation.module.scss';
 
 import sortIcon from '../../assets/Navigation/sort-icon.svg';
 
 export const types = [
-    {"0": "Все"},
+    {"0": "All"},
     {"1": "Poco"},
     {"2": "iPhone"},
     {"3": "Samsung"},
@@ -31,7 +32,7 @@ const Navigation = () => {
                         {types.map((obj, index) => {
                             return (
                                 <li key={index} onClick={() => onClickManufacturer(index)} className={activeManufacturer === index ? `${styles.nav__item} ${styles.nav__item_active}` : `${styles.nav__item}`}>
-                                    <a href="#">{obj[index]}</a>
+                                    <Link to={`/${obj[index]}`}>{obj[index]}</Link>
                                 </li>
                             )
                         })}

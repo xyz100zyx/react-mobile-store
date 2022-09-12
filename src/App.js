@@ -11,6 +11,7 @@ import Header from "./components/Header/Header";
 import Home from "./pages/Home/Home";
 import PhonePage from "./pages/PhonePage/PhonePage";
 import "./App.css";
+import Cart from "./pages/Cart/Cart";
 
 function App() {
 
@@ -21,7 +22,9 @@ function App() {
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/phone/:id" element={<PhonePage />} />
+            <Route path="/:manufacturer" element={<Home />} />
+            <Route path="/:phone/:id" element={<PhonePage />} />
+            <Route path="/cart" element = {<Cart />} />
           </Routes>
         </div>
       </Router>

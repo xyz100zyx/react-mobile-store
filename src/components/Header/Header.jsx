@@ -18,11 +18,13 @@ const Header = () => {
                         <h5 className={styles.header__subtitle}>Интнернет-магазин смартфонов</h5>
                     </div>
                 </div>
-                <div className={`${styles.header__bucket} ${styles.bucket}`}>
-                    <span className={styles.bucket__price}>510 BYN</span>
-                    <img src={cart} alt="cart-icon" className={styles.bucket__img}/>
-                    <span className={styles.bucket__count}>3</span>
-                </div>
+                <Link to={`/cart`}>
+                    <div className={`${styles.header__bucket} ${styles.bucket}`}>
+                        <span className={styles.bucket__price}>510 BYN</span>
+                        <img src={cart} alt="cart-icon" className={styles.bucket__img}/>
+                        <span className={styles.bucket__count}>3</span>
+                    </div>
+                </Link>
             </div>
         </div>
     )

@@ -24,7 +24,7 @@ const Phones = () => {
         fetchPhones();
     },[])
 
-    const onPhoneClick = (item) => {
+    /*const onPhoneClick = (item) => {
         switch (item.manufacturer) {
             case 'Poco':
                 dispatch(setActiveManufacturer(1))
@@ -40,7 +40,7 @@ const Phones = () => {
                 break;
         }
         dispatch(setActivePhone(item))
-    }
+    }*/
 
     const pocoPhones = phones.filter((phone) => phone.manufacturer === 'POCO');
     const iPhones = phones.filter((phone) => phone.manufacturer === 'Apple iPhone');
@@ -55,7 +55,7 @@ const Phones = () => {
                         <ul className={styles.phones__list}>
                             {phones.map(phone => {
                                 return (
-                                    <li key={phone.id} onClick={() => onPhoneClick(phone)} className={styles.phones__item}>
+                                    <li key={phone.id} className={styles.phones__item}>
                                         <Phone key={phone.id} item={phone}/>
                                     </li>
                                 )
@@ -72,7 +72,7 @@ const Phones = () => {
                         <ul className={styles.phones__list}>
                             {pocoPhones.map(phone => {
                                 return (
-                                    <li key={phone.id} onClick={() => onPhoneClick(phone)} className={styles.phones__item}>
+                                    <li key={phone.id} className={styles.phones__item}>
                                         <Phone key={phone.id} item={phone}/>
                                     </li>
                                 )
@@ -89,7 +89,7 @@ const Phones = () => {
                         <ul className={styles.phones__list}>
                             {iPhones.map(phone => {
                                 return (
-                                    <li key={phone.id} onClick={() => onPhoneClick(phone)} className={styles.phones__item}>
+                                    <li key={phone.id} className={styles.phones__item}>
                                         <Phone key={phone.id} item={phone}/>
                                     </li>
                                 )
@@ -106,7 +106,7 @@ const Phones = () => {
                         <ul className={styles.phones__list}>
                             {samsungPhones.map(phone => {
                                 return (
-                                    <li key={phone.id} onClick={() => onPhoneClick(phone)} className={styles.phones__item}>
+                                    <li key={phone.id} className={styles.phones__item}>
                                         <Phone key={phone.id} item={phone}/>
                                     </li>
                                 )
@@ -123,7 +123,7 @@ const Phones = () => {
                         <ul className={styles.phones__list}>
                             {xiaomiPhones.map(phone => {
                                 return (
-                                    <li key={phone.id} onClick={() => onPhoneClick(phone)} className={styles.phones__item}>
+                                    <li key={phone.id} className={styles.phones__item}>
                                         <Phone key={phone.id} item={phone}/>
                                     </li>
                                 )

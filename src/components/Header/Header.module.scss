@@ -54,6 +54,11 @@
     align-items: center;
     justify-content: center;
     align-self: flex-start;
+    text-decoration: none;
+  }
+
+  & a{
+    text-decoration: none;
   }
 
   & .bucket{
