@@ -23,7 +23,7 @@ const Phones = () => {
         fetchPhones();
     },[])
 
-    const pocoPhones = phones.filter((phone) => phone.manufacturer === 'POCO');
+    const pocoPhones = phones.filter((phone) => phone.manufacturer === 'Poco');
     const iPhones = phones.filter((phone) => phone.manufacturer === 'Apple iPhone');
     const samsungPhones = phones.filter((phone) => phone.manufacturer === 'Samsung');
     const xiaomiPhones = phones.filter((phone) => phone.manufacturer === 'Xiaomi')

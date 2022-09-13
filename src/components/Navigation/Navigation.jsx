@@ -32,7 +32,7 @@ const Navigation = () => {
                         {types.map((obj, index) => {
                             return (
                                 <li key={index} onClick={() => onClickManufacturer(index)} className={activeManufacturer === index ? `${styles.nav__item} ${styles.nav__item_active}` : `${styles.nav__item}`}>
-                                    <Link to={`/${obj[index]}`}>{obj[index]}</Link>
+                                    <Link to={`/${obj[index].toLowerCase()}`}>{obj[index]}</Link>
                                 </li>
                             )
                         })}

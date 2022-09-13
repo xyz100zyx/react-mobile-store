@@ -28,7 +28,7 @@ const PhonePage = () => {
                             <Link to="/">Интернет-магазин</Link>
                         </li>
                         <li onClick={() => {dispatch(setActiveManufacturer(activeManufacturer))}} className={styles.navlist__item}>
-                            <Link to={`/${activePhone.manufacturer}`}>Смартфоны {activePhone.manufacturer}</Link>
+                            <Link to={`/${activePhone.manufacturer.toLowerCase()}`}>Смартфоны {activePhone.manufacturer}</Link>
                         </li>
                         <li className={styles.navlist__item}>
                             <Link to={currLocation.pathname}>Смартфон {activePhone.manufacturer} {activePhone.model} {activePhone.RAM}/{activePhone.SSD} ГБ ({activePhone.color})</Link>

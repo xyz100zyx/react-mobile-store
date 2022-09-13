@@ -57,7 +57,7 @@ const Phone = ( {item} ) => {
 
     return (
         <div className={styles.phone}>
-            <Link to={`/${item.manufacturer}/${item.id}`}><img onClick={() => onClickPhone(item)} className={styles.phone__img} src={item.images[0]} alt="Picture"/></Link>
+            <Link to={`/${item.manufacturer.toLowerCase()}/${item.id}`}><img onClick={() => onClickPhone(item)} className={styles.phone__img} src={item.images[0]} alt="Picture"/></Link>
             <img onClick={() => toggleLike(item)} className={styles.phone__like} src={isInLiked(item)} alt="like button"/>
             <p className={styles.phone__type}>Смартфон</p>
             <h3 className={styles.phone__name}><Link to={`/${item.manufacturer}/${item.id}`}>Смартфон {item.manufacturer} {item.model}</Link></h3>
