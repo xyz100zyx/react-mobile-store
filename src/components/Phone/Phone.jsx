@@ -13,7 +13,7 @@ const Phone = ( {item} ) => {
     const liked = useSelector(state => state.cart.chosenPhones);
 
     const isInLiked = (item) => {
-        const is = liked.find(phone => phone.id == item.id)
+        const is = liked.find(phone => phone.cartItem.id == item.id)
         if (is === undefined) return unlikeSvg;
         else return likeSvg;
     }
@@ -27,7 +27,7 @@ const Phone = ( {item} ) => {
     }
 
     const toggleLike = (item) => {
-        const is = liked.find(phone => (phone.id === item.id))
+        const is = liked.find(phone => (phone.cartItem.id === item.id))
         if (is === undefined) {
             dispatch(addChosenPhones(item))
         }

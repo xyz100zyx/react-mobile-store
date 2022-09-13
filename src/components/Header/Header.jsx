@@ -9,7 +9,7 @@ import {useSelector} from "react-redux";
 const Header = () => {
 
     const totalPrice = useSelector(state => state.cart.totalPrice)
-    const cartCount = useSelector(state => state.cart.chosenPhones).length
+    const cartCount = useSelector(state => state.cart.totalCount)
 
     return (
         <div className={styles.header}>
