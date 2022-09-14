@@ -1,12 +1,15 @@
 import React from 'react';
 import styles from './Cart.module.scss';
+import EmptyCart from "./EmptyCart";
 import cartSvg from '../../assets/Cart/iconfinder_shopping-cart_2561279 1.svg'
 import {useDispatch, useSelector} from "react-redux";
 import {clearChosenPhones, incCount, decCount, deleteChosenPhones} from "../../redux/slices/cartSlice";
+import {useLocation} from "react-router-dom";
+import {useNavigate} from "react-router";
+import {setActiveManufacturer} from "../../redux/slices/filterSlice";
 
 const Cart = () => {
 
-    const activePhone = useSelector(state => state.phones.active);
     const cartCount = useSelector(state => state.cart.totalCount)
     const cartPhones = useSelector(state => state.cart.chosenPhones);
     const totalPrice = useSelector(state => state.cart.totalPrice);
@@ -56,10 +59,7 @@ const Cart = () => {
                     </>}
                 {
                     cartPhones.length === 0 &&
-                    <>
-                        <span>Ваша корзина пуста, присмотресь к списку смартфонов</span>
-                        <button>Выбрать</button>
-                    </>
+                        <EmptyCart />
                 }
             </div>
         </div>

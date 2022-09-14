@@ -181,4 +181,39 @@
     padding: 21px 42px;
     cursor: pointer;
   }
+
+  &_empty{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    &__text{
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 21px;
+      line-height: 19px;
+    }
+
+    &__btn{
+      position: absolute;
+      right: 25px;
+      top: 50px;
+      border: none;
+      font-family: 'Proxima Nova';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 19px;
+      color: #FFFFFF;
+      background: #1EFE6A;
+      border-radius: 30px;
+      padding: 21px 42px;
+      cursor: pointer;
+    }
+  }
+
+
+
 }
