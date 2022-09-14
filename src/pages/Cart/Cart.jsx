@@ -24,7 +24,7 @@ const Cart = () => {
                         <img className={styles.cart__icon} src={cartSvg} alt="icon cart"/>
                         <span className={styles.cart__title}>Корзина</span>
                     </div>
-                    <button onClick={() => clearCartPhones()} className={styles.cart__clean}>Очистить карзину</button>
+                    {cartCount > 0 && <button onClick={() => clearCartPhones()} className={styles.cart__clean}>Очистить карзину</button>}
                 </div>
                 {cartPhones.length > 0 &&
                     <>

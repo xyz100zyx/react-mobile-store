@@ -10,6 +10,7 @@ const filterSlice = createSlice({
     reducers: {
         setActiveManufacturer: (state, action) => {
             state.activeManufacturer = action.payload;
+            console.log(state.activeManufacturer)
         }
     }
 })

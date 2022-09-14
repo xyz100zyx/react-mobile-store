@@ -1,5 +1,6 @@
 .phones{
 
+
   &__container{
     max-width: 1080px;
     margin: 0 auto;
@@ -7,13 +8,24 @@
     justify-content: center;
     margin-top: 50px;
     padding-bottom: 50px;
+
+    & .skeleton{
+      width: 250px;
+      display: flex;
+      flex-direction: column;
+    }
   }
 
   &__list{
     display: flex;
     flex-wrap: wrap;
-    padding: 0 25px;
+    padding: 0 25px 0 70px;
     gap: 114px;
     width: 100%;
+    justify-content: flex-start;
+  }
+
+  &__item{
+
   }
 }

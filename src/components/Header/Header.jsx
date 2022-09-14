@@ -4,19 +4,25 @@ import styles from "./Header.module.scss";
 import logo from '../../assets/Header/react-academy.svg'
 import cart from '../../assets/Header/cart-icon.svg'
 import {Link} from "react-router-dom";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import {setActiveManufacturer} from "../../redux/slices/filterSlice";
 
 const Header = () => {
 
     const totalPrice = useSelector(state => state.cart.totalPrice)
     const cartCount = useSelector(state => state.cart.totalCount)
+    const dispatch = useDispatch()
+
+    const onClickLogo = () => {
+        dispatch(setActiveManufacturer(0))
+    }
 
     return (
         <div className={styles.header}>
             <div className={styles.header__container}>
                 <div className={styles.header__left}>
                     <Link to="/">
-                        <img className={styles.header__logo} src={logo} alt="Logo"/>
+                        <img onClick={() => onClickLogo()} className={styles.header__logo} src={logo} alt="Logo"/>
                     </Link>
                     <div className={styles.header__desc}>
                         <h2 className={styles.header__title}>react-mobile</h2>

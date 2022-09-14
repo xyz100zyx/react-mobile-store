@@ -1,12 +1,14 @@
 import React from "react";
 import axios from "axios";
 import styles from './Phones.module.scss';
+import MyLoader from "../Skeleton/Skeleton";
 import Phone from "../Phone/Phone";
 import {useDispatch, useSelector} from "react-redux";
 import {setPhones} from "../../redux/slices/phonesSlice";
 
 const Phones = () => {
 
+    const [isLoaded, setIsLoaded] = React.useState(false)
     const dispatch = useDispatch();
     const phones = useSelector(state => state.phones.phones);
     const activeManufacturer = useSelector(state => state.filter.activeManufacturer);
@@ -16,6 +18,7 @@ const Phones = () => {
             try{
                 const data = await axios.get("https://react-mobile.free.mockoapp.net/phones/").then(res => res.data)
                 dispatch(setPhones(data))
+                setIsLoaded(true)
             }catch(err){
                 console.log(err, `Не удалось получить данные из сервера :С`)
             }
@@ -34,13 +37,34 @@ const Phones = () => {
                 <div className={styles.phones}>
                     <div className={styles.phones__container}>
                         <ul className={styles.phones__list}>
-                            {phones.map(phone => {
-                                return (
-                                    <li key={phone.id} className={styles.phones__item}>
-                                        <Phone key={phone.id} item={phone}/>
-                                    </li>
-                                )
-                            })}
+                            {!isLoaded ? (
+                                <>
+                                    <div className={styles.skeleton}>
+                                        <MyLoader />
+                                    </div>
+                                    <div className={styles.skeleton}>
+                                        <MyLoader />
+                                    </div>
+                                    <div className={styles.skeleton}>
+                                        <MyLoader />
+                                    </div>
+                                    <div className={styles.skeleton}>
+                                        <MyLoader />
+                                    </div>
+                                    <div className={styles.skeleton}>
+                                        <MyLoader />
+                                    </div>
+                                    <div className={styles.skeleton}>
+                                        <MyLoader />
+                                    </div>
+                                </>
+                            ) :  phones.map(phone => {
+                                    return (
+                                        <li key={phone.id} className={styles.phones__item}>
+                                            <Phone key={phone.id} item={phone}/>
+                                        </li>
+                                    )
+                                })}
                         </ul>
                     </div>
                 </div>

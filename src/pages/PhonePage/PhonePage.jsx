@@ -16,7 +16,10 @@ const PhonePage = () => {
     const isOpenSwiper = useSelector(state => state.swiper.isOpen)
     const phone = useSelector(state => state.phones.active)
     const dispatch = useDispatch()
-    dispatch(setStart())
+
+    React.useEffect(()=>{
+        dispatch(setStart())
+    }, [])
 
 
     return (
