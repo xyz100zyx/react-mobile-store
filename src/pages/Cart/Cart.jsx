@@ -1,14 +1,15 @@
 import React from 'react';
 import styles from './Cart.module.scss';
 import EmptyCart from "./EmptyCart";
+import CartPopup from "../../popups/CartPopup/CartPopup";
 import cartSvg from '../../assets/Cart/iconfinder_shopping-cart_2561279 1.svg'
 import {useDispatch, useSelector} from "react-redux";
 import {clearChosenPhones, incCount, decCount, deleteChosenPhones} from "../../redux/slices/cartSlice";
-import {useLocation} from "react-router-dom";
-import {useNavigate} from "react-router";
-import {setActiveManufacturer} from "../../redux/slices/filterSlice";
+
 
 const Cart = () => {
+
+    const [popupActive, setPopupActive] = React.useState(false);
 
     const cartCount = useSelector(state => state.cart.totalCount)
     const cartPhones = useSelector(state => state.cart.chosenPhones);
@@ -55,13 +56,14 @@ const Cart = () => {
                                 className={styles.total__price}>{totalPrice} BYN</span>
                     </span>
                         </div>
-                        <button className={styles.cart__submit}>Оплатить сейчас</button>
+                        <button onClick={()=>setPopupActive(true)} className={styles.cart__submit}>Оплатить сейчас</button>
                     </>}
                 {
                     cartPhones.length === 0 &&
                         <EmptyCart />
                 }
             </div>
+            {popupActive && <CartPopup state={popupActive} action={setPopupActive} />}
         </div>
     )
 }
