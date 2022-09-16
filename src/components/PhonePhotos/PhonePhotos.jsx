@@ -18,9 +18,9 @@ const PhonePhotos = ({item}) => {
         <div className={styles.PhonePhotos}>
             <div className={styles.PhonePhotos__container}>
                 <ul className={`${styles.PhonePhotos__list} ${styles.list}`}>
-                    {phone.images.map((image, index) => {
+                    {phone.cartItem.images.map((image, index) => {
                         return (
-                            <li key={`${phone.id}_${image}`} className={`${styles.list__item} ${styles.item}`}>
+                            <li key={`${phone.cartItem.id}_${image}`} className={`${styles.list__item} ${styles.item}`}>
                                 <img onClick={() => onClickSliderPhoto(index)} src={image} alt="photo of phone"/>
                             </li>
                         )

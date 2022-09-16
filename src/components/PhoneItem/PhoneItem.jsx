@@ -15,12 +15,12 @@ const PhoneItem = ({item}) => {
         <div className={styles.PhoneItem}>
             <div className={styles.PhoneItem__container}>
                 <h2 className={styles.PhoneItem__title}>
-                    {phone.manufacturer} {phone.model} ({phone.color})
+                    {phone.cartItem.manufacturer} {phone.cartItem.model} ({phone.cartItem.color})
                 </h2>
                 <div className={`${styles.PhoneItem__content} ${styles.content}`}>
                     <img
                         className={styles.content__img}
-                        src={phone.images[0]}
+                        src={phone.cartItem.images[0]}
                         alt="Phone photo"
                     />
                     <div className={styles.content__right}>
@@ -35,11 +35,11 @@ const PhoneItem = ({item}) => {
                             </li>
                             <li className={`${styles.list__item} ${styles.item}}`}>
                                 <img className={styles.item__img} src={sdIcon} alt="icon size"/>
-                                <span className={styles.item__value}>{phone.SSD} ГБ</span>
+                                <span className={styles.item__value}>{phone.cartItem.SSD} ГБ</span>
                             </li>
                         </ul>
                         <div className={`${styles.PhoneItem__price} ${styles.price}`}>
-                            <span className={styles.price__value}>{phone.price}.00 BYN</span>
+                            <span className={styles.price__value}>{phone.cartItem.price}.00 BYN</span>
                             <button className={styles.price__button}>Оформить заказ</button>
                         </div>
                     </div>

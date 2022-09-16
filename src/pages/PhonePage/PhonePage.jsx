@@ -14,7 +14,6 @@ const PhonePage = () => {
     const currLocation = useLocation()
     const activePhone = useSelector(state => state.phones.active)
     const isOpenSwiper = useSelector(state => state.swiper.isOpen)
-    const phone = useSelector(state => state.phones.active)
     const dispatch = useDispatch()
 
     React.useEffect(()=>{
@@ -31,15 +30,15 @@ const PhonePage = () => {
                             <Link to="/">Интернет-магазин</Link>
                         </li>
                         <li onClick={() => {dispatch(setActiveManufacturer(activeManufacturer))}} className={styles.navlist__item}>
-                            <Link to={`/${activePhone.manufacturer.toLowerCase()}`}>Смартфоны {activePhone.manufacturer}</Link>
+                            <Link to={`/${activePhone.cartItem.manufacturer.toLowerCase()}`}>Смартфоны {activePhone.cartItem.manufacturer}</Link>
                         </li>
                         <li className={styles.navlist__item}>
-                            <Link to={currLocation.pathname}>Смартфон {activePhone.manufacturer} {activePhone.model} {activePhone.RAM}/{activePhone.SSD} ГБ ({activePhone.color})</Link>
+                            <Link to={currLocation.pathname}>Смартфон {activePhone.cartItem.manufacturer} {activePhone.cartItem.model} {activePhone.cartItem.RAM}/{activePhone.cartItem.SSD} ГБ ({activePhone.cartItem.color})</Link>
                         </li>
                     </ul>
                 </nav>
-                <PhoneItem item={phone} />
-                <PhonePhotos item={phone} />
+                <PhoneItem item={activePhone} />
+                <PhonePhotos item={activePhone} />
                 {isOpenSwiper &&  <Swiper />}
                 <PhoneInfo />
             </div>
